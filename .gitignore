@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+**/node_modules/
+vendor/
+**/vendor/
+
+# Next.js build output
+.next/
+**/.next/
+out/
+**/out/
+build/
+**/build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Environment variables
+.env*.local
+.env
+!.env.example
+!.env.local.example
+
+# Vercel
+.vercel/
+
+# OS and Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
