@@ -17,6 +17,12 @@ export const WHATSAPP_NUMBER = '628973207214';
 export const WHATSAPP_DISPLAY = '+62 897-3207-214';
 
 /**
+ * Social Media URLs
+ */
+export const INSTAGRAM_URL = 'https://www.instagram.com/vonetisofficial';
+export const TIKTOK_URL = 'https://www.tiktok.com/@vonetisofficial';
+
+/**
  * Build a wa.me link with optional pre-filled message
  * @param {string} [message]
  * @returns {string}

@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { waLink } from '@/lib/utils';
+import { waLink, INSTAGRAM_URL, TIKTOK_URL } from '@/lib/utils';
 import styles from './Footer.module.css';
 
 const footerLinks = {
@@ -39,6 +39,12 @@ const socialIcons = {
   ),
 };
 
+const socialUrls = {
+  whatsapp: waLink(),
+  instagram: INSTAGRAM_URL,
+  tiktok: TIKTOK_URL,
+};
+
 export default function Footer() {
   return (
     <footer className={styles.footer}>
@@ -61,7 +67,7 @@ export default function Footer() {
           </p>
           <div className={styles.socials}>
             {Object.entries(socialIcons).map(([name, icon]) => (
-              <a key={name} href={name === 'whatsapp' ? waLink() : `https://${name}.com`} target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label={name}>
+              <a key={name} href={socialUrls[name] || `https://${name}.com`} target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label={name}>
                 {icon}
               </a>
             ))}
