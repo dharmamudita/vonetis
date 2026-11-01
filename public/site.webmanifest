@@ -1,0 +1,27 @@
+{
+  "name": "VONETIS — Solusi Lengkap Jasa Akademik & Kreatif",
+  "short_name": "VONETIS",
+  "description": "Solusi lengkap jasa tugas kuliah, website & aplikasi, skripsi, video editor, dan langganan digital premium.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#071e3d",
+  "theme_color": "#071e3d",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
