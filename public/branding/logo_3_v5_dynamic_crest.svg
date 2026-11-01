@@ -1,0 +1,70 @@
+
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1024" height="1024" fill="#ffffff"/>
+  
+  <defs>
+    <!-- Deep Navy to Ocean Blue Gradient -->
+    <linearGradient id="g_left_wing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#071e3d"/>
+    </linearGradient>
+
+    <!-- Ocean Blue to Electric Ice Blue Gradient -->
+    <linearGradient id="g_right_wing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7dd3fc"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+
+    <!-- Center Nib Left (Deep Ocean) -->
+    <linearGradient id="g_nib_left" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+
+    <!-- Center Nib Right (Bright Ice Cyan) -->
+    <linearGradient id="g_nib_right" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#bae6fd"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+
+    <!-- Dark Luxury Navy Badge Background -->
+    <linearGradient id="grad_dark_badge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c2340"/>
+      <stop offset="50%" stop-color="#071e3d"/>
+      <stop offset="100%" stop-color="#040f1f"/>
+    </linearGradient>
+
+    <filter id="shadow_apex" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#0284c7" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(512, 512)" filter="url(#shadow_apex)">
+    
+    <g id="apex-crown">
+      <!-- Left Outer Wing (Angled Horn / Falcon Crest) -->
+      <path d="M-270 -270 L-100 -130 L-20 120 L0 290 L0 300 L-40 160 L-180 -30 L-110 -70 L-270 -270 Z" fill="url(#g_left_wing)" stroke="none" stroke-width="1"/>
+
+      <!-- Right Outer Wing (Angled Horn / Falcon Crest) -->
+      <path d="M270 -270 L100 -130 L20 120 L0 290 L0 300 L40 160 L180 -30 L110 -70 L270 -270 Z" fill="url(#g_right_wing)" stroke="none" stroke-width="1"/>
+
+      <!-- Left Outer Chevron Armor -->
+      <path d="M-270 -270 L-110 -70 L-180 -30 L-230 -160 Z" fill="#0284c7" opacity="0.9"/>
+      
+      <!-- Right Outer Chevron Armor -->
+      <path d="M270 -270 L110 -70 L180 -30 L230 -160 Z" fill="#38bdf8" opacity="0.9"/>
+
+      <!-- Central Academic Diamond Nib (Mata Pena & Kursor Roket) -->
+      <!-- Left Nib Face -->
+      <path d="M-4 -290 L-85 -70 L-4 120 Z" fill="url(#g_nib_left)"/>
+      <!-- Right Nib Face -->
+      <path d="M4 -290 L85 -70 L4 120 Z" fill="url(#g_nib_right)"/>
+
+      <!-- Nib Inner Precision Bevel -->
+      <path d="M-4 -290 L-4 120 L-40 -70 Z" fill="#071e3d" opacity="0.25"/>
+      <path d="M4 -290 L4 120 L40 -70 Z" fill="#ffffff" opacity="0.35"/>
+    </g>
+  
+  </g>
+</svg>
