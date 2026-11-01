@@ -24,7 +24,7 @@ export default function ContactPage() {
     setStatus('loading');
     setFeedbackMsg('');
 
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || '66ca6f81-326a-44a3-bf3b-f9e48f8f5bd6';
 
     // Fallback otomatis ke WhatsApp jika access key belum diisi di .env.local
     if (!accessKey) {
