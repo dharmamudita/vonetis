@@ -54,7 +54,7 @@
 .mainContent { display: flex; flex-direction: column; gap: var(--space-5); }
 .contentCard {
   background: var(--glass-bg); backdrop-filter: var(--glass-blur);
-  border: 1px solid rgba(65, 112, 48, 0.15); border-top-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(2, 132, 199, 0.15); border-top-color: rgba(255, 255, 255, 0.9);
   border-left-color: rgba(255, 255, 255, 0.6); border-radius: var(--radius-2xl);
   padding: var(--space-6); box-shadow: var(--shadow-subtle), var(--inner-light);
   position: relative; overflow: hidden;
@@ -62,7 +62,7 @@
 .contentCard::before {
   content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
   border-radius: inherit; margin: -1px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 40%, rgba(65,112,48,0.05) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 40%, rgba(2, 132, 199, 0.05) 100%);
 }
 .contentTitle { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; margin-bottom: var(--space-5); color: var(--text-primary); }
 
@@ -77,14 +77,14 @@
 .pricingBox {
   padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4);
   background: var(--glass-bg); backdrop-filter: var(--glass-blur);
-  border: 1px solid rgba(65, 112, 48, 0.15); border-top-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(2, 132, 199, 0.15); border-top-color: rgba(255, 255, 255, 0.9);
   border-left-color: rgba(255, 255, 255, 0.6); border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-subtle), var(--inner-light); position: relative; overflow: hidden;
 }
 .pricingBox::before {
   content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
   border-radius: inherit; margin: -1px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 40%, rgba(65,112,48,0.05) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 40%, rgba(2, 132, 199, 0.05) 100%);
 }
 .pricingTitle { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 700; color: var(--text-primary); }
 .pricingFrom { display: block; font-size: var(--text-xs); color: var(--text-tertiary); margin-bottom: 2px; font-family: var(--font-accent); }
@@ -95,7 +95,7 @@
 .relatedCard {
   padding: var(--space-5); text-align: center; cursor: pointer;
   background: var(--glass-bg); backdrop-filter: var(--glass-blur);
-  border: 1px solid rgba(65, 112, 48, 0.15); border-top-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(2, 132, 199, 0.15); border-top-color: rgba(255, 255, 255, 0.9);
   border-left-color: rgba(255, 255, 255, 0.6); border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-subtle), var(--inner-light); transition: all var(--transition-base);
   position: relative; overflow: hidden;
@@ -103,7 +103,7 @@
 .relatedCard::before {
   content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
   border-radius: inherit; margin: -1px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 40%, rgba(65,112,48,0.05) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 40%, rgba(2, 132, 199, 0.05) 100%);
 }
 .relatedCard:hover {
   background: var(--glass-bg-hover); border-color: var(--glass-border-hover);

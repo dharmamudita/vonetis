@@ -7,16 +7,16 @@
   display: flex; align-items: center; justify-content: space-between; 
   gap: var(--space-6); width: 100%; max-width: 1000px;
   padding: var(--space-2) var(--space-4); border-radius: var(--radius-full);
-  background: rgba(26, 47, 18, 0.6); /* --green-darkest with transparency */
+  background: rgba(7, 30, 61, 0.65); /* Abyssal Navy with transparency */
   backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid rgba(65, 112, 48, 0.8);
-  box-shadow: 0 4px 24px rgba(26, 47, 18, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(2, 132, 199, 0.6);
+  box-shadow: 0 4px 24px rgba(7, 30, 61, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.2);
   pointer-events: auto; transition: all var(--transition-base);
 }
 .scrolled .inner {
-  background: rgba(26, 47, 18, 0.85);
-  border-color: rgba(65, 112, 48, 0.9);
-  box-shadow: 0 12px 32px rgba(26, 47, 18, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  background: rgba(7, 30, 61, 0.88);
+  border-color: rgba(2, 132, 199, 0.8);
+  box-shadow: 0 12px 32px rgba(7, 30, 61, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.3);
   padding: var(--space-2) var(--space-5);
 }
 
@@ -49,20 +49,20 @@
   width: 16px; opacity: 1;
 }
 
-.navLinkActive { color: white !important; background: rgba(65, 112, 48, 0.8) !important; font-weight: 700; box-shadow: 0 2px 12px rgba(16, 185, 129, 0.3); border-radius: var(--radius-full) !important; transform: translateY(0) !important; }
+.navLinkActive { color: white !important; background: rgba(2, 132, 199, 0.85) !important; font-weight: 700; box-shadow: 0 2px 12px rgba(56, 189, 248, 0.35); border-radius: var(--radius-full) !important; transform: translateY(0) !important; }
 .navLinkActive::after { display: none; }
-.navDot { display: none; } /* Removed dot for cleaner pill look */
+.navDot { display: none; }
 
 /* Right */
 .right { display: flex; align-items: center; gap: var(--space-3); }
-.ctaBtn { font-size: var(--text-sm) !important; padding: 8px 20px !important; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2) !important; }
+.ctaBtn { font-size: var(--text-sm) !important; padding: 8px 20px !important; box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25) !important; }
 
 /* Mobile */
 .mobileToggle { display: none; width: 40px; height: 40px; border-radius: var(--radius-full); align-items: center; justify-content: center; color: white; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); pointer-events: auto; }
 .mobileNav { 
   position: absolute; top: calc(100% + var(--space-4)); left: var(--space-4); right: var(--space-4); 
-  background: rgba(26, 47, 18, 0.95); backdrop-filter: var(--glass-blur-heavy); -webkit-backdrop-filter: var(--glass-blur-heavy);
-  border: 1px solid rgba(65, 112, 48, 0.8); border-radius: var(--radius-2xl); 
+  background: rgba(7, 30, 61, 0.95); backdrop-filter: var(--glass-blur-heavy); -webkit-backdrop-filter: var(--glass-blur-heavy);
+  border: 1px solid rgba(2, 132, 199, 0.6); border-radius: var(--radius-2xl); 
   animation: fadeInDown 0.3s cubic-bezier(0.16, 1, 0.3, 1); padding: var(--space-4); 
   box-shadow: 0 24px 48px rgba(0,0,0,0.2), inset 0 1px 1px rgba(255, 255, 255, 0.15); 
   pointer-events: auto; transform-origin: top; 
@@ -70,7 +70,7 @@
 .mobileNavInner { display: flex; flex-direction: column; gap: var(--space-1); }
 .mobileLink { display: flex; align-items: center; justify-content: space-between; padding: var(--space-3) var(--space-4); border-radius: var(--radius-xl); font-weight: 500; color: rgba(255,255,255,0.8); font-family: var(--font-accent); transition: all var(--transition-fast); }
 .mobileLink:hover, .mobileLinkActive { color: white; background: rgba(255,255,255,0.1); transform: translateX(4px); }
-.mobileLinkDot { width: 6px; height: 6px; border-radius: 50%; background: var(--emerald-light); box-shadow: 0 0 8px rgba(16, 185, 129, 0.5); }
+.mobileLinkDot { width: 6px; height: 6px; border-radius: 50%; background: var(--emerald-light); box-shadow: 0 0 8px rgba(56, 189, 248, 0.6); }
 .mobileCta { display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-4); padding-top: var(--space-4); border-top: 1px solid rgba(255, 255, 255, 0.1); }
 
 @media (max-width: 1024px) { 

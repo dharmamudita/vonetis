@@ -6,7 +6,7 @@ import { ArrowLeft } from 'lucide-react';
 export default function NotFound() {
   return (
     <div className="page-wrapper" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 'var(--space-6)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-      <div style={{ position: 'absolute', width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 60%)', filter: 'blur(60px)', zIndex: 0 }} />
+      <div style={{ position: 'absolute', width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 60%)', filter: 'blur(60px)', zIndex: 0 }} />
       
       <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--space-6)' }}>
         <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(4rem, 15vw, 7rem)', fontWeight: 900, color: 'var(--green)', lineHeight: 1, letterSpacing: '-0.05em' }}>

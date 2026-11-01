@@ -8,12 +8,12 @@
 /* Subtle light mesh for dark background */
 .footer::before {
   content: ''; position: absolute; inset: 0; pointer-events: none;
-  background-image: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.1), transparent 70%);
+  background-image: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.12), transparent 70%);
 }
 
 .topLine { 
   height: 1px; 
-  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.25), rgba(16, 185, 129, 0.25), transparent); 
+  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.3), rgba(56, 189, 248, 0.3), transparent); 
 }
 
 /* Ultra sleek & compact content row on desktop/laptop */
@@ -47,7 +47,7 @@
   display: flex; 
   align-items: center; 
   justify-content: center; 
-  box-shadow: 0 0 14px rgba(16, 185, 129, 0.35); 
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.4); 
 }
 .logoIcon { 
   color: var(--green-darkest); 
@@ -92,10 +92,10 @@
 }
 .socialLink:hover { 
   border-color: var(--emerald-light); 
-  background: rgba(16, 185, 129, 0.15); 
+  background: rgba(56, 189, 248, 0.15); 
   color: white; 
   transform: translateY(-2px); 
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25); 
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3); 
 }
 
 .colTitle { 

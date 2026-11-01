@@ -19,21 +19,21 @@
 .meshGrid {
   position: absolute; inset: 0;
   background-image: 
-    linear-gradient(to right, rgba(65, 112, 48, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(65, 112, 48, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(2, 132, 199, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(2, 132, 199, 0.06) 1px, transparent 1px);
   background-size: 4rem 4rem;
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%);
 }
 
 .orbPrimary {
   position: absolute; width: 600px; height: 600px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 60%);
   top: -200px; right: -150px; filter: blur(60px); animation: floatSlow 20s ease-in-out infinite;
 }
 
 .orbSecondary {
   position: absolute; width: 500px; height: 500px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(65, 112, 48, 0.08) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.1) 0%, transparent 60%);
   bottom: 10%; left: -100px; filter: blur(60px); animation: floatSlow 25s ease-in-out infinite reverse;
 }
 
@@ -58,7 +58,7 @@
 
 .trustBar {
   display: flex; align-items: center; justify-content: center; gap: var(--space-8);
-  padding-top: var(--space-8); border-top: 1px solid rgba(65, 112, 48, 0.1);
+  padding-top: var(--space-8); border-top: 1px solid rgba(2, 132, 199, 0.12);
   max-width: 600px; margin: 0 auto;
 }
 .trustItem { display: flex; align-items: center; gap: var(--space-3); }
@@ -155,8 +155,8 @@
   background: var(--green-darkest); color: white; border-radius: 3rem;
 }
 .ctaCard::before { display: none; } /* Disable default glass highlight for dark card */
-.ctaGlow1 { position: absolute; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(16, 185, 129, 0.4) 0%, transparent 70%); top: -200px; right: -100px; filter: blur(50px); pointer-events: none; }
-.ctaGlow2 { position: absolute; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(65, 112, 48, 0.6) 0%, transparent 70%); bottom: -200px; left: -100px; filter: blur(50px); pointer-events: none; }
+.ctaGlow1 { position: absolute; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(56, 189, 248, 0.45) 0%, transparent 70%); top: -200px; right: -100px; filter: blur(50px); pointer-events: none; }
+.ctaGlow2 { position: absolute; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(2, 132, 199, 0.55) 0%, transparent 70%); bottom: -200px; left: -100px; filter: blur(50px); pointer-events: none; }
 
 .ctaContent { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
 .ctaTitle { font-family: var(--font-display); font-size: var(--text-5xl); font-weight: 900; margin-bottom: var(--space-4); letter-spacing: -0.03em; color: white; }
@@ -201,8 +201,8 @@
     grid-column: span 2;
     grid-row: span 1;
     padding: 16px 14px;
-    background: linear-gradient(135deg, rgba(241, 247, 238, 0.9), rgba(255, 255, 255, 0.95));
-    border: 1.5px solid rgba(65, 112, 48, 0.25);
+    background: linear-gradient(135deg, rgba(240, 248, 255, 0.9), rgba(255, 255, 255, 0.95));
+    border: 1.5px solid rgba(2, 132, 199, 0.25);
   }
   .bentoLarge .bentoHeader {
     margin-bottom: 10px;

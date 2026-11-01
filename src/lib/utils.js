@@ -7,8 +7,8 @@ import { FileText, MonitorPlay, Trophy, FileBadge, GraduationCap, Video, Camera,
  * Brand identity
  */
 export const BRAND_NAME = 'VONETIS';
-export const BRAND_COLOR = '#417030'; // --green
-export const BRAND_GRADIENT = 'linear-gradient(135deg, #2d5020, #5a8f45)'; // --green-dark -> --green-light
+export const BRAND_COLOR = '#0284c7'; // Ocean Blue (Biru Laut)
+export const BRAND_GRADIENT = 'linear-gradient(135deg, #0369a1, #0284c7)'; // Deep Ocean -> Vibrant Ocean
 
 /**
  * WhatsApp contact (semua chat & pesanan diarahkan ke sini)
