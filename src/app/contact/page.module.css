@@ -21,6 +21,55 @@
 .formTitle { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 700; color: var(--text-primary); }
 .formGroup { display: flex; flex-direction: column; }
 
+.alertSuccess {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: rgba(65, 112, 48, 0.12);
+  border: 1px solid var(--green);
+  border-radius: var(--radius-lg);
+  color: var(--green-darkest);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  line-height: 1.45;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.alertError {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid #ef4444;
+  border-radius: var(--radius-lg);
+  color: #b91c1c;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  line-height: 1.45;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.orDivider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 4px 0;
+  color: var(--text-tertiary);
+  font-size: var(--text-xs);
+  font-family: var(--font-accent);
+}
+.orDivider::before,
+.orDivider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--glass-border);
+}
+.orDivider span {
+  padding: 0 10px;
+}
+
 .faqList { display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-6); }
 .faqItem { background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: 1px solid rgba(65, 112, 48, 0.15); border-top-color: rgba(255, 255, 255, 0.9); border-left-color: rgba(255, 255, 255, 0.6); border-radius: var(--radius-xl); box-shadow: var(--shadow-subtle), var(--inner-light); overflow: hidden; transition: all var(--transition-base); }
 .faqItem[open] { background: var(--glass-bg-hover); border-color: var(--glass-border-hover); }
