@@ -46,6 +46,12 @@ export default function ContactPage() {
     }
 
     try {
+      const timeStr = new Date().toLocaleString('id-ID', {
+        timeZone: 'Asia/Jakarta',
+        dateStyle: 'full',
+        timeStyle: 'short',
+      }) + ' WIB';
+
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
@@ -54,11 +60,15 @@ export default function ContactPage() {
         },
         body: JSON.stringify({
           access_key: accessKey,
-          name: form.name,
-          email: form.email,
-          subject: form.subject || `Pesan Baru dari ${form.name} (VONETIS)`,
-          message: form.message,
-          from_name: 'VONETIS Website Contact Form',
+          subject: `🔔 [VONETIS] ${form.subject || 'Pesan Baru'} — dari ${form.name}`,
+          from_name: `VONETIS Form • ${form.name}`,
+          replyto: form.email,
+          '👤 Nama Lengkap': form.name,
+          '📧 Email Pengirim': form.email,
+          '📌 Subjek / Topik': form.subject || 'Konsultasi Layanan',
+          '💬 Isi Pesan': form.message,
+          '🕒 Waktu Masuk': timeStr,
+          '🌐 Dikirim Dari': 'https://vonetisofficial.store/contact',
         }),
       });
 
@@ -192,21 +202,6 @@ export default function ContactPage() {
                     </>
                   )}
                 </button>
-
-                <div className={styles.orDivider}>
-                  <span>atau</span>
-                </div>
-
-                <a
-                  href={waLink('Halo VONETIS, saya ingin konsultasi langsung.')}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary w-full"
-                  style={{ justifyContent: 'center' }}
-                >
-                  <Phone size={18} />
-                  Chat Langsung via WhatsApp
-                </a>
               </form>
             </div>
           </div>
