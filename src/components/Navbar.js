@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, MessageCircle } from 'lucide-react';
 import { waLink } from '@/lib/utils';
@@ -33,10 +34,17 @@ export default function Navbar() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`} id="navbar">
       <div className={`container ${styles.inner}`}>
         {/* Logo */}
-        <Link href="/" className={styles.logo}>
-          <span className={styles.logoMark}>
-            <span className={styles.logoIcon}>V</span>
-          </span>
+        <Link href="/" className={styles.logo} aria-label="VONETIS Beranda">
+          <div className={styles.logoMarkWrap}>
+            <Image
+              src="/branding/vonetis_triple_crown_icon.svg"
+              alt="VONETIS Emblem"
+              width={34}
+              height={34}
+              className={styles.logoEmblem}
+              priority
+            />
+          </div>
           <span className={styles.logoText}>
             VONE<span className={styles.logoAccent}>TIS</span>
           </span>

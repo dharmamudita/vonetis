@@ -22,6 +22,15 @@ export const metadata = {
     'VONETIS',
   ],
   authors: [{ name: 'VONETIS' }],
+  icons: {
+    icon: [
+      { url: '/branding/vonetis_triple_crown_icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: '32x32' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/branding/vonetis_triple_crown_icon_192.png',
+  },
   openGraph: {
     title: 'VONETIS — Solusi Lengkap Jasa Akademik & Kreatif',
     description:

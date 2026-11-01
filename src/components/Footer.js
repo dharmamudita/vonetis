@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { waLink, INSTAGRAM_URL, TIKTOK_URL } from '@/lib/utils';
 import styles from './Footer.module.css';
 
@@ -54,10 +55,16 @@ export default function Footer() {
       <div className={`container ${styles.content}`}>
         {/* Brand Column */}
         <div className={styles.brandCol}>
-          <Link href="/" className={styles.logo}>
-            <span className={styles.logoMark}>
-              <span className={styles.logoIcon}>V</span>
-            </span>
+          <Link href="/" className={styles.logo} aria-label="VONETIS Beranda">
+            <div className={styles.logoMarkWrap}>
+              <Image
+                src="/branding/vonetis_triple_crown_icon.svg"
+                alt="VONETIS Emblem"
+                width={30}
+                height={30}
+                className={styles.logoEmblem}
+              />
+            </div>
             <span className={styles.logoText}>
               VONE<span className={styles.logoAccent}>TIS</span>
             </span>

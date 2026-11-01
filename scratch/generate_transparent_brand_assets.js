@@ -1,0 +1,188 @@
+const fs = require('fs');
+const path = require('path');
+const sharp = require('sharp');
+
+const brandingDir = path.join(__dirname, '..', 'public', 'branding');
+const publicDir = path.join(__dirname, '..', 'public');
+const appDir = path.join(__dirname, '..', 'src', 'app');
+
+if (!fs.existsSync(brandingDir)) {
+  fs.mkdirSync(brandingDir, { recursive: true });
+}
+
+// 1. Standalone Emblem Icon SVG (512x512, perfectly centered, transparent)
+// The emblem bounding box is roughly -285 to +285 X (width 570), -326 to +300 Y (height 626).
+// Center is (0, -13).
+// If we map to 512x512 with margin, scale ~ 512 * 0.76 / 626 = ~ 0.62.
+// Center at (256, 260).
+const emblemDefs = `
+  <defs>
+    <linearGradient id="g_navy_ocean" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#071e3d"/>
+    </linearGradient>
+    <linearGradient id="g_ice_bright" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7dd3fc"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="g_center_l" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <linearGradient id="g_center_r" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#bae6fd"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <filter id="shadow_clean" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0284c7" flood-opacity="0.25"/>
+    </filter>
+    <filter id="spark_glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#38bdf8" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+`;
+
+const emblemPaths = `
+  <!-- Left Wing (Pillar 1: Creative & Design) -->
+  <path d="M-270 -270 L-100 -130 L-20 120 L0 290 L0 300 L-40 160 L-180 -30 L-110 -70 L-270 -270 Z" fill="url(#g_navy_ocean)"/>
+  <circle cx="-270" cy="-270" r="14" fill="#0284c7"/>
+
+  <!-- Right Wing (Pillar 2: Cloud & Subscriptions) -->
+  <path d="M270 -270 L100 -130 L20 120 L0 290 L0 300 L40 160 L180 -30 L110 -70 L270 -270 Z" fill="url(#g_ice_bright)"/>
+  <circle cx="270" cy="-270" r="14" fill="#38bdf8"/>
+
+  <!-- Center Apex Pillar (Pillar 3: Academic & AI Intelligence) -->
+  <path d="M-5 -310 L-85 -70 L-5 120 Z" fill="url(#g_center_l)"/>
+  <path d="M5 -310 L85 -70 L5 120 Z" fill="url(#g_center_r)"/>
+  <circle cx="0" cy="-310" r="16" fill="#7dd3fc" filter="url(#spark_glow)"/>
+
+  <!-- Precision Inner Cut -->
+  <path d="M-5 -310 L-5 120 L-45 -70 Z" fill="#071e3d" opacity="0.25"/>
+  <path d="M5 -310 L5 120 L45 -70 Z" fill="#ffffff" opacity="0.35"/>
+`;
+
+const iconSvg = `<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  ${emblemDefs}
+  <g transform="translate(256, 266) scale(0.68)" filter="url(#shadow_clean)">
+    ${emblemPaths}
+  </g>
+</svg>`;
+
+// Favicon SVG (32x32 clean, no heavy filter to stay crystal sharp at small size)
+const faviconSvg = `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="fav_l" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#071e3d"/>
+    </linearGradient>
+    <linearGradient id="fav_r" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7dd3fc"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="fav_c" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(16, 17) scale(0.045)">
+    <path d="M-270 -270 L-100 -130 L-20 120 L0 290 L0 300 L-40 160 L-180 -30 L-110 -70 L-270 -270 Z" fill="url(#fav_l)"/>
+    <circle cx="-270" cy="-270" r="16" fill="#0284c7"/>
+    <path d="M270 -270 L100 -130 L20 120 L0 290 L0 300 L40 160 L180 -30 L110 -70 L270 -270 Z" fill="url(#fav_r)"/>
+    <circle cx="270" cy="-270" r="16" fill="#38bdf8"/>
+    <path d="M-5 -310 L-85 -70 L-5 120 Z" fill="url(#fav_c)"/>
+    <path d="M5 -310 L85 -70 L5 120 Z" fill="url(#fav_r)"/>
+    <circle cx="0" cy="-310" r="18" fill="#7dd3fc"/>
+  </g>
+</svg>`;
+
+// Full horizontal lockup transparent (Light mode text: Dark Navy VONETIS)
+const horizontalLockupTransparent = `<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  ${emblemDefs}
+  <g transform="translate(420, 450) scale(0.72)" filter="url(#shadow_clean)">
+    ${emblemPaths}
+  </g>
+  <line x1="680" y1="260" x2="680" y2="640" stroke="#cbd5e1" stroke-width="2"/>
+  <g transform="translate(740, 460)" text-anchor="start">
+    <text font-family="'Outfit', 'Inter', sans-serif" font-weight="900" font-size="94" letter-spacing="6" fill="#071e3d">
+      VONE<tspan fill="#0284c7">TIS</tspan>
+    </text>
+    <text y="52" font-family="'Space Grotesk', 'Inter', sans-serif" font-weight="700" font-size="20" letter-spacing="7" fill="#64748b">
+      SOLUTIONS &amp; DIGITAL STORE
+    </text>
+    <text y="90" font-family="'Inter', sans-serif" font-weight="500" font-size="14" letter-spacing="2" fill="#94a3b8">
+      ONE-STOP PLATFORM FOR DIGITAL LIFE &amp; STUDY
+    </text>
+  </g>
+</svg>`;
+
+// Full horizontal lockup transparent (Dark mode text: White & Cyan for dark header / footer)
+const horizontalLockupDarkTransparent = `<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  ${emblemDefs}
+  <g transform="translate(420, 450) scale(0.72)" filter="url(#shadow_clean)">
+    ${emblemPaths}
+  </g>
+  <line x1="680" y1="260" x2="680" y2="640" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+  <g transform="translate(740, 460)" text-anchor="start">
+    <text font-family="'Outfit', 'Inter', sans-serif" font-weight="900" font-size="94" letter-spacing="6" fill="#ffffff">
+      VONE<tspan fill="#38bdf8">TIS</tspan>
+    </text>
+    <text y="52" font-family="'Space Grotesk', 'Inter', sans-serif" font-weight="700" font-size="20" letter-spacing="7" fill="#38bdf8">
+      SOLUTIONS &amp; DIGITAL STORE
+    </text>
+    <text y="90" font-family="'Inter', sans-serif" font-weight="500" font-size="14" letter-spacing="2" fill="rgba(255,255,255,0.7)">
+      ONE-STOP PLATFORM FOR DIGITAL LIFE &amp; STUDY
+    </text>
+  </g>
+</svg>`;
+
+async function build() {
+  console.log("Generating transparent brand assets...");
+
+  // 1. Write SVGs
+  fs.writeFileSync(path.join(brandingDir, 'vonetis_triple_crown_icon.svg'), iconSvg);
+  fs.writeFileSync(path.join(brandingDir, 'v6_evolusi_3_triple_crown_transparent.svg'), horizontalLockupTransparent);
+  fs.writeFileSync(path.join(brandingDir, 'v6_evolusi_3_dark_transparent.svg'), horizontalLockupDarkTransparent);
+  
+  // Favicon in src/app/icon.svg and public/favicon.svg
+  fs.writeFileSync(path.join(appDir, 'icon.svg'), faviconSvg);
+  fs.writeFileSync(path.join(publicDir, 'favicon.svg'), faviconSvg);
+
+  // 2. Render High-Res PNGs with sharp (Transparent)
+  await sharp(Buffer.from(iconSvg))
+    .resize(512, 512)
+    .png()
+    .toFile(path.join(brandingDir, 'vonetis_triple_crown_icon_512.png'));
+  console.log("Created vonetis_triple_crown_icon_512.png");
+
+  await sharp(Buffer.from(iconSvg))
+    .resize(192, 192)
+    .png()
+    .toFile(path.join(brandingDir, 'vonetis_triple_crown_icon_192.png'));
+  console.log("Created vonetis_triple_crown_icon_192.png");
+
+  await sharp(Buffer.from(iconSvg))
+    .resize(32, 32)
+    .png()
+    .toFile(path.join(publicDir, 'favicon.ico')); // Saved as 32x32 png in ico path
+  console.log("Created public/favicon.ico");
+
+  await sharp(Buffer.from(horizontalLockupTransparent))
+    .resize(1400, 900)
+    .png()
+    .toFile(path.join(brandingDir, 'v6_evolusi_3_triple_crown_transparent.png'));
+  console.log("Created v6_evolusi_3_triple_crown_transparent.png");
+
+  await sharp(Buffer.from(horizontalLockupDarkTransparent))
+    .resize(1400, 900)
+    .png()
+    .toFile(path.join(brandingDir, 'v6_evolusi_3_dark_transparent.png'));
+  console.log("Created v6_evolusi_3_dark_transparent.png");
+
+  console.log("All transparent brand assets successfully generated!");
+}
+
+build().catch(err => {
+  console.error("Build failed:", err);
+  process.exit(1);
+});

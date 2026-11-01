@@ -1,0 +1,25 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="fav_l" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#071e3d"/>
+    </linearGradient>
+    <linearGradient id="fav_r" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7dd3fc"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="fav_c" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(16, 17) scale(0.045)">
+    <path d="M-270 -270 L-100 -130 L-20 120 L0 290 L0 300 L-40 160 L-180 -30 L-110 -70 L-270 -270 Z" fill="url(#fav_l)"/>
+    <circle cx="-270" cy="-270" r="16" fill="#0284c7"/>
+    <path d="M270 -270 L100 -130 L20 120 L0 290 L0 300 L40 160 L180 -30 L110 -70 L270 -270 Z" fill="url(#fav_r)"/>
+    <circle cx="270" cy="-270" r="16" fill="#38bdf8"/>
+    <path d="M-5 -310 L-85 -70 L-5 120 Z" fill="url(#fav_c)"/>
+    <path d="M5 -310 L85 -70 L5 120 Z" fill="url(#fav_r)"/>
+    <circle cx="0" cy="-310" r="18" fill="#7dd3fc"/>
+  </g>
+</svg>
