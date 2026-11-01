@@ -98,7 +98,7 @@ export default function ContactPage() {
               <h2 className={styles.infoTitle}>Informasi Kontak</h2>
               <div className={styles.infoList}>
                 {[
-                  { icon: <Mail size={20} />, label: 'Email', value: 'hello@vonetis.com' },
+                  { icon: <Mail size={20} />, label: 'Email', value: 'officialvonetis@gmail.com', href: 'mailto:officialvonetis@gmail.com' },
                   { icon: <Phone size={20} />, label: 'WhatsApp', value: WHATSAPP_DISPLAY, href: waLink() },
                   { icon: <MapPin size={20} />, label: 'Lokasi', value: 'Indonesia' },
                   { icon: <Clock size={20} />, label: 'Jam Kerja', value: '24/7 Online' },
